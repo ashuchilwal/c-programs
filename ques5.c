@@ -1,57 +1,26 @@
-// Using if-else
-
-// #include<stdio.h>
-// int main()
-// {
-//     int num;
-
-//     printf("Enter a number :");
-//     scanf("%d", &num);
-
-//     if(num%2 == 0)
-//       printf("Number is Even");
-
-//     else
-//       printf("Number id odd");
-
-//     return 0;
-// }
-
-
-// Using switch case ******
-
-// #include<stdio.h>
-// int main()
-// {
-//   int num;
-
-//   printf("Enter a number :\n");
-//   scanf("%d", &num);
-  
-//   switch(num %2)
-//   {
-//   case 0:
-//     printf("Even number\n");
-//     break;
-  
-//   default:
-//    printf("Odd number\n");
-//     break;
-//   }
-//  return 0;
-// }
-
-
-// Using ternsry operator*************************
-
 #include<stdio.h>
 int main()
 {
-  int num;
+    int fibo(int);
 
-  printf("enter a number :");
-  scanf("%d", &num);
+    int n, i;
 
-  (num%2 == 0) ? printf("Number is even ") : printf("number is odd");
-  return 0;
+    printf("enter the range of fibonacchi series : ");
+    scanf("%d", &n);
+
+    for(i=0; i<=n; i++)
+    {
+        printf(" %d", fibo(i));
+    }
+    return 0;
+}
+
+int fibo(int n)
+{
+    if(n==0)
+        return 0;
+    if(n==1)
+        return 1;
+    else
+        return(fibo(n-1) + fibo(n-2));
 }

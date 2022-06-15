@@ -1,11 +1,24 @@
 #include<stdio.h>
-int main(){
 
-    int num;
+int fact(int n)
+{
+    if(n>0)
+        return(n * fact(n-1));
+    else
+        return 1;
 
-    printf("Enter a decimal number : ");
-    scanf("%d", &num);
-
-    printf("octal value is : %o\n", num);
-    printf("hexadecimal value is : %x", num);
 }
+int main()
+{
+
+    int n;
+    printf("enter a number : ");
+    scanf("%d", &n);
+
+    // x = fact(n);
+    printf("factorial of %d is %d", n, fact(n));
+
+}
+
+
+        
