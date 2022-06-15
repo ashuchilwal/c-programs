@@ -1,25 +1,18 @@
 #include<stdio.h>
-
-int fact(int num)
-{
-    int i, fact=1;
-
-    for(i=1; i<=num; i++)
-    {
-        fact = fact*i;  
-    }
-    return fact;
-    
-}
-
 int main()
 {
-    int num , factorial;
+    int factorial(int);
 
-    printf("enter a number :");
-    scanf("%d",&num);
+    int n;
+    printf("Enter a number : ");
+    scanf("%d", &n);
 
-    factorial = fact(num);
-    printf("%d factorial is %d", num, factorial);
-    return 0;
+    printf("%d", factorial(n));
+}
+
+int factorial(int a)
+{
+    if(a==1)
+        return 1;
+    return(a*factorial(a-1));
 }
