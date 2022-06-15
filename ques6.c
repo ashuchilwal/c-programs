@@ -1,24 +1,23 @@
+// Write a recursive function to calculate sum of digits of a number 
+
 #include<stdio.h>
-#include<math.h>
+int sum_digit(int n);
 int main()
 {
-    float a, b, c, s, area;
+    int n;
+    printf("Enter a number which sum of digit you want : ");
+    scanf("%d", &n);
 
-    printf("enter 3 sides of triangle :");
-    scanf("%f%f%f", &a,&b,&c);
+    printf("%d", sum_digit(n));
+}
 
-    if(a+b>c && b+c>a && c+a>b)
+int sum_digit(int n)
+{
+    int num = n, r, sum=0;
+    if(num>0)
     {
-        s = (a+b+c)/2;
-        
-        area = sqrt(s*(s-a)*(s-b)*(s-c));
-
-        printf("area of traingle is : %f", area);
+        r=num%10;
+        sum = r+(sum_digit(num/10));
+        return sum;
     }
-    else
-    {
-        printf("sides do not make triangle");
-    }
-  
-  return 0;
 }

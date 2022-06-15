@@ -1,4 +1,4 @@
-// Write a program to print first N even natural numbers in reverse order
+// Write a program to print first N odd natural numbers in reverse order
 
 #include<stdio.h>
 int main()
@@ -8,11 +8,12 @@ int main()
     scanf("%d", &n);
 
     i=n;
-    do
+    while (i>=1)
     {
-        printf("%d", 2*i);
+        printf("%d", 2*i-1);
         i--;
         printf("\n");
-    } while (i>=1);
+    }
     return 0;
+    
 }

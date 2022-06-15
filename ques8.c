@@ -1,43 +1,23 @@
-// using if_else
-
-// #include<stdio.h>
-// int main()
-// {
-//     int a, b, c;
-
-//     printf("enter 3 numbers :");
-//     scanf("%d%d%d", &a,&b,&c);
-
-//     if(a<b && a<c)
-//     {
-//         printf("a is minimum");
-//     }
-//     else if (b<a && b<c)
-//     {
-//         printf("b is minimun");
-//     }
-//     else
-//     printf("c is minimum");
-//     return 0;
-// }
-
+// Write a recursive function to calculate sum of cubes of first N natural numbers
 
 #include<stdio.h>
+int sum_qubes(int n);
 int main()
 {
-    int a, b, c, min;
+    int n;
+    printf("Enter the range of natural number : ");
+    scanf("%d", &n);
 
-    printf("enter 3 numbers :");
-    scanf("%d%d%d", &a,&b,&c);
-    min=a;
-    if(b<min)
+    printf("%d", sum_qubes(n));
+}
+
+int sum_qubes(int n)
+{
+    int sum=0;
+
+    if(n>0)
     {
-        min = b;
+        sum=n*n*n+(sum_qubes(n-1));
+        return sum;
     }
-    if(c<min)
-    {
-        min = c;
-    }
-    printf("value of min %d", min);
-    return 0;
 }

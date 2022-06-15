@@ -1,26 +1,20 @@
+// Write a recursive function to print first N natural numbers in reverse order
+
 #include<stdio.h>
+void n_natural(int n);
 int main()
 {
-    int fibo(int);
-
-    int n, i;
-
-    printf("enter the range of fibonacchi series : ");
+    int n;
+    printf("enter the range of natural number : ");
     scanf("%d", &n);
 
-    for(i=0; i<=n; i++)
-    {
-        printf(" %d", fibo(i));
-    }
-    return 0;
+    n_natural(n);
 }
-
-int fibo(int n)
+void n_natural(int n)
 {
-    if(n==0)
-        return 0;
-    if(n==1)
-        return 1;
-    else
-        return(fibo(n-1) + fibo(n-2));
+    if(n>=1)
+    {
+        printf(" %d", n);
+        n_natural(n-1);
+    }
 }

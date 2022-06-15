@@ -1,47 +1,20 @@
+// Write a recursive function to calculate sum of squares of digits of a number
+
 #include<stdio.h>
+int sum_square_digit(int n);
 int main()
-{   
-    int m, e, p, c, cs, s;
-    float sum, percent;
+{
+    int n;
+    printf("Enter a number : ");
+    scanf("%d", &n);
 
-    printf("Enter 6 subject numbers : ");
-    scanf("%d%d%d%d%d%d", &m, &e, &p, &c, &cs, &s);
+    printf("%d", sum_square_digit(n));
+}
 
-    sum = m + e + p + c + cs + s;
-    percent = sum/6;
-
-    printf("Total number is : %f\n", sum);
-    printf("Percent is : %f\n", percent);
-
-    if(percent>80)
+int sum_square_digit(int n)
+{
+    if(n>0)
     {
-        printf("Grade A ");
+        return((n%10)*(n%10) + sum_square_digit(n/10));
     }
-
-    else if(61 < percent > 80)
-    {
-        printf("Grade B ");
-    }
-
-    else if(51 < percent > 60)
-    {
-        printf("Grade C ");
-    }
-
-    else if(41 < percent > 50)
-    {
-        printf("Grade D ");
-    }
-
-    else if(35 < percent > 40)
-    {
-        printf("Grade E ");
-    }
-
-    else if(35 > percent)
-    {
-        printf("Grade F ");
-    }
-
-    return 0;
 }

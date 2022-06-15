@@ -1,24 +1,22 @@
+// Write a recursive function to print first N natural numbers
+
 #include<stdio.h>
-
-int fact(int n)
-{
-    if(n>0)
-        return(n * fact(n-1));
-    else
-        return 1;
-
-}
+void n_natural(int n);
 int main()
 {
-
     int n;
-    printf("enter a number : ");
+    printf("enter the range of natural no : ");
     scanf("%d", &n);
 
-    // x = fact(n);
-    printf("factorial of %d is %d", n, fact(n));
-
+    
+    n_natural(n);
 }
 
-
-        
+void n_natural(int n)
+{
+    if(n>=1)
+    {
+        n_natural(n-1);
+        printf(" %d", n);
+    }
+}
